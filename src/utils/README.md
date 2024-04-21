@@ -1,4 +1,37 @@
 # `utils`
+## `binary_search`
+### `binary_search`
+```rust
+fn binary_search<F: Fn(usize) -> bool>(initial_t: usize, initial_f: usize, f: F) -> usize
+```
+
+- `initial_t < initial_f` の場合
+  - 区間 `[initial_t, initial_f)` において `f(x) = true` かつ `f(x + 1) = false` となるような `x` を返す．特に `f` が単調なら，`f(x) = true` となるような最大の `x` を返す．
+- `initial_t > initial_f` の場合
+  - 区間 `(initial_f, initial_t]` において `f(x - 1) = false` かつ `f(x) = true` となるような `x` を返す．特に `f` が単調なら，`f(x) = true` となるような最小の `x` を返す．
+
+##### 制約
+- `initial_t >= 0`
+- `initial_f >= 0`
+- `f(initial_t) = true`
+- `f(initial_f) = false`
+
+##### 計算量
+- 区間幅の初期値 `|initial_t - initial_f|` を $m$ として $O(\log m)$
+
+### `lower_bound`
+```rust
+fn lower_bound<T: PartialOrd>(a: &Vec<T>, x: T) -> usize
+```
+
+- 昇順にソートされた要素数 $n$ の配列 $(a_i)$ に対して $a_i\geq x$ となる最小の $i$ を返す．そのような $i$ が存在しない場合は $n$ を返す．
+
+##### 制約
+- $a_0\leq a_1\leq \cdots \leq a_{n - 1}$
+
+##### 計算量
+- $O(\log n)$
+
 ## `compression`
 
 ### `Compression<T>` 構造体
