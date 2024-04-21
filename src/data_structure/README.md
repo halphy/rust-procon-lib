@@ -11,7 +11,7 @@
 ```rust
 fn new(n: usize, e: T, f: impl Fn(usize) -> T) -> Self
 ```
-- $a_i=f(i)\; (i=0, \cdots, n - 1)$ で定義される数列 $(a_i)$ に対して，その累積和を計算する．
+- $a_i=f(i) \; (i=0, \cdots, n - 1)$ で定義される数列 $(a_i)$ に対して，その累積和を計算する．
 - `e` は型 `T` が表す代数系の加法単位元を表す．
 
 ##### 制約
@@ -26,7 +26,7 @@ fn new(n: usize, e: T, f: impl Fn(usize) -> T) -> Self
 ```rust
 fn query(&self, l: usize, r: usize) -> T
 ```
-- 区間 `[l, r)` に対する和 $a_l+ \cdots +a_{r - 1}$ を計算する．$l=r$ のときは `e` を返す．
+- 区間 `[l, r)` に対する和 $a_l+ \cdots +a_{r - 1}$ を計算する．$l = r$ のときは `e` を返す．
 
 ##### 計算量
 - $O(1)$
