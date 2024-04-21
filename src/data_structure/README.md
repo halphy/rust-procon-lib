@@ -60,9 +60,7 @@ fn new(h: usize, w: usize, e: T, f: impl Fn(usize, usize) -> T) -> Self
 fn query(&self, lx: usize, rx: usize, ly: usize, ry: usize) -> T
 ```
 - 区間 `[lx, rx)` $`\times`$ `[ly, ry)` に対する和
-$$
-\sum_{{\rm lx}\leq i < {\rm rx}}\sum_{{\rm ly}\leq j < {\rm ry}}a_{ij}
-$$
+$$\sum_{{\rm lx}\leq i < {\rm rx}}\sum_{{\rm ly}\leq j < {\rm ry}}a_{ij}$$
 を計算する．
 
 ##### 計算量
