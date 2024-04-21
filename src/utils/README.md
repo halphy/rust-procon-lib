@@ -24,7 +24,10 @@ fn binary_search<F: Fn(usize) -> bool>(initial_t: usize, initial_f: usize, f: F)
 fn lower_bound<T: PartialOrd>(a: &Vec<T>, x: T) -> usize
 ```
 
-- 要素数 $n$ の配列 $(a_i)$ に対して $a_i\geq x$ となる最小の $i$ を返す．そのような $i$ が存在しない場合は $n$ を返す．
+- 昇順にソートされた要素数 $n$ の配列 $(a_i)$ に対して $a_i\geq x$ となる最小の $i$ を返す．そのような $i$ が存在しない場合は $n$ を返す．
+
+##### 制約
+- $a_0\leq a_1\leq \cdots \leq a_{n - 1}$
 
 ##### 計算量
 - $O(\log n)$
