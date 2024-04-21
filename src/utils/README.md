@@ -55,3 +55,6 @@ fn get_value(&self, idx: usize) -> T
 
 ##### 計算量
 - $O(1)$
+
+#### Verification Code
+- https://atcoder.jp/contests/abc036/submissions/52655063
