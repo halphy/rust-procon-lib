@@ -24,3 +24,25 @@ pub mod binary_search {
         binary_search(a.len() + 1, 0, |i| a[i - 1] >= x) - 1
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::binary_search::{binary_search, lower_bound};
+
+    #[test]
+    fn test_bs_simple() {
+        assert_eq!(binary_search(0, 100, |x| x * x <= 10), 3);
+        assert_eq!(binary_search(0, 100, |x| x * x <= 16), 4);
+    }
+
+    #[test]
+    fn test_lb_simple() {
+        let a = vec![1, 3, 6, 6, 7];
+
+        assert_eq!(lower_bound(&a, 0), 0);
+        assert_eq!(lower_bound(&a, 3), 1);
+        assert_eq!(lower_bound(&a, 5), 2);
+        assert_eq!(lower_bound(&a, 6), 2);
+        assert_eq!(lower_bound(&a, 10), 5);
+    }
+}
