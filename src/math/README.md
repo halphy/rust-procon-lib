@@ -16,7 +16,7 @@ fn new(size: usize) -> Self
 - この後に呼ぶ `factorial(n)` および `binomial_coefficient(n, r)` において，引数 `n` は `size` 未満でなければならない．
 
 ##### 制約
-- $0\leq {\rm size} < $ `T::modulus()`
+- $`0\leq {\rm size} < `$ `T::modulus()`
 
 ##### 計算量
 - $O({\rm size})$
@@ -38,7 +38,11 @@ fn factorial(&self, n: usize) -> T
 fn binomial_coefficient(&self, n: usize, r: usize) -> T
 ```
 - $0 \leq r\leq n$ の場合
-$$ C(n, r)\equiv \frac{n!}{r!(n - r)!}$$
+
+$$
+C(n, r)\equiv \frac{n!}{r!(n - r)!}
+$$
+
 の値を返す．
 - $r > n$ の場合は $0$ を返す．
 
