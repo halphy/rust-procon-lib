@@ -73,16 +73,13 @@ $$\sum_{{\rm lx}\leq i < {\rm rx}}\sum_{{\rm ly}\leq j < {\rm ry}}a_{ij}$$
 ### `RangeSet`
 区間をsetで管理するデータ構造．
 
-集合 $S \subset \mathbb{Z}$ に対して，$S$ を区間の和集合として
+集合 $`S \subset \mathbb{Z}`$ に対して，$`S`$ を区間の和集合として
 
-$$
-S=\bigcup_i \; [l_i, r_i)\\
-(l_0 < r_0 < l_1 < \cdots < r_i < l_{i + 1} < \cdots)
-$$
+$$S=\bigcup_i [l_i, r_i) \\ (l_0 < r_0 < l_1 < \cdots < r_i < l_{i + 1} < \cdots)$$
 
 のように表すことができる（この表示は一意的である）．
 
-このとき，$S$ の代わりに区間の集合 $T\equiv \{[l_i, r_i)\mid i\in \mathbb{N}\}$ を管理することで，集合 $S$ に対する要素の追加・削除・存在判定を $O(\log n)$（$n$は区間の数）で行うことができる．
+このとき，$`S`$ の代わりに区間の集合 $`T\equiv \{[l_i, r_i)\mid i\in \mathbb{N}\}`$ を管理することで，集合 $`S`$ に対する要素の追加・削除・存在判定を $`O(\log n)`$（$`n`$は区間の数）で行うことができる．
 
 #### `new`
 ```rust
@@ -103,7 +100,7 @@ fn contains(&self, x: i64) -> bool
 ```rust
 fn get_range(&self, x: i64) -> Option<(i64, i64)>
 ```
-- $x \in [l, r)$ となるような区間 $[l, r) \in T$ が存在するならば，$l, r$ のタプルを返す．存在しなければ `None` を返す．
+- $x \in [l, r)$ となるような区間 $[l, r) \in T$ が存在するならば，$`l, r`$ のタプルを返す．存在しなければ `None` を返す．
 
 ##### 計算量
 - 区間の数を $n$ として $O(\log n)$
@@ -121,7 +118,7 @@ fn insert(&mut self, x: i64)
 ```rust
 fn remove(&mut self, x: i64)
 ```
-- $x$ を集合から削除する．$x$ が集合に属さない場合は何もしない．
+- $x$ を集合から削除する．$`x`$ が集合に属さない場合は何もしない．
 
 ##### 計算量
 - 区間の数を $n$ として $O(\log n)$
