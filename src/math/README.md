@@ -15,6 +15,9 @@ fn new(size: usize) -> Self
 - 初期化を行う．
 - この後に呼ぶ `factorial(n)` および `binomial_coefficient(n, r)` において，引数 `n` は `size` 未満でなければならない．
 
+##### 制約
+- $0\leq {\rm size} < $ `T::modulus()`
+
 ##### 計算量
 - $O({\rm size})$
 
