@@ -31,8 +31,20 @@ pub mod sorted_set {
             )
         }
 
+        pub fn contains(&mut self, x: T) -> bool {
+            //! Returns if `x` is contained in the set.
+
+            if self.size == 0 {
+                return false;
+            }
+
+            let (bidx, i) = self._position(&x);
+
+            i != self.values[bidx].len() && self.values[bidx][i] == x
+        }
+
         pub fn insert(&mut self, x: T) -> bool {
-            //! Inserts `x` into the set in O(√n) time.
+            //! Inserts `x` into the set.
 
             if self.size == 0 {
                 self.values.push(vec![x]);
@@ -63,7 +75,7 @@ pub mod sorted_set {
         }
 
         pub fn remove(&mut self, x: T) -> bool {
-            //! Removes `x` from the set in O(√n) time.
+            //! Removes `x` from the set.
 
             if self.size == 0 {
                 return false;
@@ -85,7 +97,7 @@ pub mod sorted_set {
         }
 
         pub fn kth_element(&self, mut k: usize) -> Option<T> {
-            //! Returns the `k`-th smallest element in O(√n) time.
+            //! Returns the `k`-th smallest element.
 
             for bucket in &self.values {
                 if k < bucket.len() {
@@ -109,5 +121,26 @@ pub mod sorted_set {
 
             ret
         }
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::sorted_set::SortedSet;
+
+    #[test]
+    fn test_simple() {
+        let mut s = SortedSet::new();
+        s.insert(3);
+        s.insert(7);
+        s.insert(2);
+        s.insert(5);
+        assert_eq!(s.all_elements(), vec![&2, &3, &5, &7]);
+        assert_eq!(s.kth_element(1), Some(3));
+        assert_eq!(s.kth_element(4), None);
+        assert_eq!(s.contains(3), true);
+        s.remove(3);
+        assert_eq!(s.kth_element(1), Some(5));
+        assert_eq!(s.contains(3), false);
     }
 }
