@@ -8,6 +8,11 @@
 - `range_set`：区間をsetで管理するデータ構造
 - `sorted_set`：平方分割で集合を管理するデータ構造
 - `union_find`：Union-Find（素集合データ構造）
+
+### [`math`](/src/math/)
+数学系
+- `binomial`：階乗・二項係数（mod p）
+
 ### [`utils`](/src/utils/)
 その他お役立ちツール
 - `binary_search`：二分探索
