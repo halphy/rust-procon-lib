@@ -133,6 +133,9 @@ fn mex(&self, x: i64) -> i64
 ##### 計算量
 - 区間の数を $n$ として $O(\log n)$
 
+#### Verification Code
+- https://atcoder.jp/contests/hhkb2020/submissions/52692061
+
 ## `union_find`
 
 ### `UnionFind`構造体
