@@ -7,19 +7,19 @@ pub mod binomial {
     }
 
     impl<T: ModIntBase> BinomialCoefficient<T> {
-        pub fn new(n: usize) -> Self {
+        pub fn new(size: usize) -> Self {
             let zero = T::new(0);
             let one = T::new(1);
 
-            let mut factorial = vec![zero; n];
-            let mut factorial_inv = vec![zero; n];
-            let mut inv = vec![zero; n];
+            let mut factorial = vec![zero; size];
+            let mut factorial_inv = vec![zero; size];
+            let mut inv = vec![zero; size];
 
             (factorial[0], factorial[1]) = (one, one);
             (factorial_inv[0], factorial_inv[1]) = (one, one);
             (inv[0], inv[1]) = (zero, one);
 
-            for i in 2..n {
+            for i in 2..size {
                 factorial[i] = factorial[i - 1] * T::new(i);
                 inv[i] = -inv[T::modulus() as usize % i] * T::new(T::modulus() as usize / i);
                 factorial_inv[i] = factorial_inv[i - 1] * inv[i];
