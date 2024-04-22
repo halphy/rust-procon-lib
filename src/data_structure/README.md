@@ -136,6 +136,74 @@ fn mex(&self, x: i64) -> i64
 #### Verification Code
 - https://atcoder.jp/contests/hhkb2020/submissions/52692061
 
+## `sorted_set`
+### `SortedSet<T>`
+
+平方分割により集合を管理するデータ構造．要素数を $n$ とするとき，以下の操作が $O(\sqrt n)$ でできる．
+
+- 要素の存在判定
+- 要素の追加
+- 要素の削除
+- $k$ 番目に小さい値の取得
+
+ただし，`T` は `PartialOrd` トレイトおよび `Clone` トレイトを実装している必要がある．
+
+実装の多くを https://github.com/tatyam-prime/SortedSet に依った．
+
+#### `new`
+```rust
+pub fn new() -> Self
+```
+- 空の集合を作成する．
+
+#### `contains`
+```rust
+fn contains(&mut self, x: T) -> bool
+```
+- $x$ が集合に属するかどうかを返す．
+
+##### 計算量
+- $O(\sqrt n)$
+
+#### `insert`
+```rust
+fn insert(&mut self, x: T) -> bool
+```
+- $x$ が集合に属さない場合は $`x`$ を追加して `true` を返す．そうでない場合 `false` を返す．
+
+##### 計算量
+- $O(\sqrt n)$
+
+#### `remove`
+```rust
+fn remove(&mut self, x: T) -> bool
+```
+- $x$ が集合に属する場合は $`x`$ を削除して `true` を返す．そうでない場合 `false` を返す．
+
+##### 計算量
+- $O(\sqrt n)$
+
+#### `kth_element`
+```rust
+fn kth_element(&self, mut k: usize) -> Option<T>
+```
+- 集合の中で $k$ 番目（0-indexed）に小さい要素を返す．そのような要素が存在しない場合は `None` を返す．
+
+##### 計算量
+- $O(\sqrt n)$
+
+#### `all_elements`
+```rust
+fn all_elements(&self) -> Vec<&T>
+```
+- 集合の要素を昇順に並べたベクタを返す．
+
+##### 計算量
+- $O(n)$
+
+### Verification Code
+- https://atcoder.jp/contests/past202112-open/submissions/52695545
+
 ## `union_find`
 
 ### `UnionFind`構造体
