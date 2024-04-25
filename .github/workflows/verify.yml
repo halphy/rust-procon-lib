@@ -27,6 +27,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Run tests
+        run: cargo test --verbose
+
       - name: Set up competitive-verifier
         uses: competitive-verifier/actions/setup@v2
         with:
