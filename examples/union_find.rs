@@ -9,14 +9,14 @@ fn main() {
         q: usize,
     }
 
+    let mut uf = UnionFind::new(n);
+
     for _ in 0..q {
         input! {
             t: usize,
             u: usize,
             v: usize,
         }
-
-        let mut uf = UnionFind::new(n);
 
         match t {
             0 => {
