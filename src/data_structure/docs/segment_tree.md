@@ -12,8 +12,8 @@ documentation_of: ../segment_tree.rs
 集合 $S$ がある演算 $\cdot : S\times S\to S$ に関してモノイドをなすとする．すなわち
 
 1. （結合律）任意の $x, y, z\in S$ に対して
-$$(xy)z=x(yz)$$
-2. （単位元の存在）ある $e\in S$ が存在して任意の $x\in S$ に対して $$ex=xe=x$$
+$$`(xy)z=x(yz)`$$
+2. （単位元の存在）ある $e\in S$ が存在して任意の $x\in S$ に対して $$`ex=xe=x`$$
 
 が成り立つと仮定する．
 
